@@ -106,10 +106,9 @@ static int const maxNumberOfCharacters = 16;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"fromFirstToSecond"]){
         HistoryViewController *historyViewController=(HistoryViewController *)segue.destinationViewController;
-        historyViewController.historyContent = [NSMutableArray array];
 //        NSRange endRange = NSMakeRange(self.testArray.count >= 5 ? self.testArray.count - 5 : 0, MIN(self.testArray.count, 5));
 //        historyViewController.historyContent = [self.testArray subarrayWithRange:endRange];
-        historyViewController.historyContent = [self.testArray mutableCopy];
+        historyViewController.historyContent = self.testArray;
     }
 }
 @end
